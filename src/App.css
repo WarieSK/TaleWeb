@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+/* Reset základných štýlov */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Merriweather sans', serif;
+  background-color: #f8f8f8;
+  color: #333;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Skryje scrollbar v IE a Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Skryje scrollbar v Chrome, Safari a Edge */
+}
+
+/* Hlavný kontajner */
+.app {
+  width: 100vw;
+}
+
+
+
+/* Responsívny dizajn */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app {
+    width: 100%;
+  }
+
+}

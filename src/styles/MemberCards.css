@@ -1,0 +1,79 @@
+/* Štýl pre MemberCards inšpirovaný ShowCards.css */
+.membersCards-container {
+  text-align: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #f6cfbe, #b9dcf2);
+  min-height: 100vh; /* Zabezpečenie plnej výšky */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw; /* Zabezpečenie plnej šírky */
+}
+
+.membersCards-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Grid pre členov */
+.membersCards-grid {
+  width: 90%; /* Teraz na celú šírku stránky */
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(to right, #f6cfbe, #b9dcf2);
+  min-height: 100%;
+}
+
+/* Karta člena */
+.memberCards-card {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.memberCards-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Profilový obrázok */
+.memberCards-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Informácie o členovi */
+.memberCards-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.memberCards-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.memberCards-info p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

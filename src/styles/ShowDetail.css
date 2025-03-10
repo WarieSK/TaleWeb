@@ -1,0 +1,45 @@
+.show-detail {
+  width: 100%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+.show-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  justify-self: center;
+}
+
+.show-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.show-title {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.show-date {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.show-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}

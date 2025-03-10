@@ -1,0 +1,11 @@
+/* Zabezpečenie viditeľnosti nadpisu nad headerom */
+.shows-page {
+    margin-top: 100px; /* Zvýšený margin-top pre posunutie obsahu */
+    padding-top: 20px; /* Extra priestor pre lepšiu čitateľnosť */
+  }
+  
+/* Ak sa stránka presúva k nadpisu cez hash (napr. #shows-page) */
+.shows-page h1 {
+    scroll-margin-top: 100px; /* Posunie cieľový bod nadpisu pri skrolovaní */
+  }
+  

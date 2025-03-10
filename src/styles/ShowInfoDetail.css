@@ -1,0 +1,217 @@
+/* Hlavný kontajner */
+.show-info-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 4.55%;
+  background: linear-gradient(to right, #f6cfbe, #b9dcf2);
+}
+
+/* Detaily predstavenia */
+.show-info-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Obrázok predstavenia */
+.show-info-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.show-info-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Obsah */
+.show-info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.show-info-title {
+  font-size: 2rem;
+  color: #1e3a8a;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.show-info-date {
+  font-size: 1.2rem;
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.show-info-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Sekcia obsadenia */
+.show-info-participants {
+  width: 100%;
+  margin-top: 40px;
+  padding: 40px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Grid pre technický tím a účinkujúcich (3 stĺpce) */
+.participants-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+  max-width: 100%;
+  padding: 10px;
+  align-items: start;
+}
+
+/* Nadpisy pre sekcie */
+.crew-column h2,
+.cast-column h2 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Stĺpec pre technický tím */
+.crew-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 10%;
+  border-right: 10px solid #ddd;
+  min-height: 100%;
+}
+
+/* Každá sekcia technického tímu s čiarkou medzi rolami */
+.crew-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+
+.crew-row:last-child {
+  border-bottom: none;
+}
+
+/* Nadpis role */
+.crew-role {
+  font-weight: bold;
+  flex: 1;
+}
+
+/* Mená členov tímu pod sebou */
+.crew-names {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0,5%;
+}
+
+/* Stĺpce pre účinkujúcich */
+.cast-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0,5%;
+  padding-right: 10%;
+  min-height: 100%;
+}
+
+/* Prvý stĺpec účinkujúcich má rovnaký počet ako technický tím */
+.cast-column:first-of-type {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* Účinkujúci - riadky */
+.cast-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  gap: 10px;
+  padding: 3px 0;
+}
+
+/* Klikateľné mená s efektom */
+.clickable-name {
+  cursor: pointer;
+  color: #2563eb;
+  transition: color 0.2s ease-in-out;
+}
+
+.clickable-name:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+.photo-gallery-card {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+
+.photo-gallery-card h2 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery-card {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 14px rgba(0,0,0,0.3);
+}
+
+.gallery-photo {
+  width: 100%; /* Dynamická šírka podľa veľkosti kontajnera */
+  height: auto; /* Zachovanie pôvodného pomeru strán */
+  object-fit: contain; /* Aby sa fotka zobrazila bez orezania */
+}

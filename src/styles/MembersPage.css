@@ -1,0 +1,17 @@
+.members-page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 80px 20px;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.members-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: bold;
+}

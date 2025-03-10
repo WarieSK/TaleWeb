@@ -1,0 +1,155 @@
+/* Základný reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fixovaný header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background: linear-gradient(to right, #ebf4f5, #b5c6e0); */
+  background: linear-gradient(to right, #f6cfbe, #b9dcf2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  padding: 15px 20px;
+}
+
+/* Navigačný bar */
+.navbar {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Navigačné odkazy */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #007BFF;
+}
+
+/* Hamburger menu pre telefóny */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1100;
+}
+
+/* Bočné menu pre telefóny */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Začína mimo obrazovky na ľavej strane */
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to bottom, #eef2f3, #d9e2ec);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.4s ease-in-out; /* Plynulá animácia */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+  visibility: hidden; /* Sidebar je neviditeľný, kým sa neaktivuje */
+}
+
+/* Keď je sidebar otvorený */
+.sidebar.show {
+  left: 0; /* Vysunutie sidebaru */
+  visibility: visible;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 9%;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background: #007BFF;
+  color: white;
+}
+
+/* Responzivita pre menšie obrazovky */
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .menu-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 2%;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .sidebar {
+    width: 60%;
+  }
+
+  .sidebar a {
+    font-size: 1rem;
+  }
+}
+

@@ -1,0 +1,163 @@
+/* Sekcia Shows */
+.showsMain {
+  width: 100vw;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #f6cfbe, #b9dcf2);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Nadpis sekcie */
+.showsMain h2 {
+  text-align: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid pre predstavenia */
+.showsMain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 85%;
+  margin: 0 auto;
+  margin-top: 20px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Karta predstavenia */
+.showMain-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+.showMain-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  z-index: 2;
+}
+
+/* Obrázok v karte predstavenia */
+.showMain-card img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Nadpis predstavenia */
+.showMain-card h3 {
+  font-size: 1.9rem;
+  margin: 15px 0;
+  color: #111;
+  font-weight: bold;
+}
+
+/* Dátum predstavenia */
+.showMain-date {
+  font-weight: bold;
+  color: #007BFF;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+/* Popis predstavenia */
+.showMain-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+/* Tlačidlo pod kartičkami */
+.showMain-more-container {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.showMain-more-button {
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff;
+  padding: 14px 35px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.showMain-more-button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: scale(1.12);
+  box-shadow: 0px 6px 14px rgba(0, 123, 255, 0.6);
+}
+
+/* Responzívne nastavenia */
+@media (max-width: 768px) {
+  .showsMain {
+    padding: 5%;
+  }
+  
+  .showsMain h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
+
+  .showMain-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .showMain-description {
+    -webkit-line-clamp: 5; /* Odstránenie obmedzenia riadkov na mobile */
+    overflow: hidden;
+  }
+
+  .showsMain-grid {
+    grid-template-columns: 1fr;
+    overflow: visible;
+    max-height: none; /* Odstránenie výškového limitu */
+  }
+
+  .showMain-card img {
+    max-width: 100%;
+  }
+
+  .showMain-more-button {
+    width: 90%;
+  }
+}

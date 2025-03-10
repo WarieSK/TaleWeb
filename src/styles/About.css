@@ -1,0 +1,103 @@
+/* Sekcia About s celoplošnou fotografiou */
+.about {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  background: url('Z-380.jpg') no-repeat center center/cover;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Overlay na ľavej polovici sekcie */
+.about::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Obsah zobrazený nad overlayom, umiestnený na ľavej strane */
+.about-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 45%;
+  z-index: 2;
+  color: #fff;
+  text-align: right;
+  padding: 2%;
+  padding-left: 20%;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-button {
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff;
+  padding: 14px 35px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.about-button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: scale(1.12);
+  box-shadow: 0px 6px 14px rgba(0, 123, 255, 0.6);
+}
+
+/* Responzívne nastavenie */
+@media (max-width: 768px) {
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-content {
+    position: static;
+    transform: none;
+    width: 90%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 7%;
+  }
+
+  .about::after {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+  }
+}
