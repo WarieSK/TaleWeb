@@ -1,7 +1,7 @@
 .hero {
     width: 100vw;
     height: 100vh; /* Celá výška okna prehliadača */
-    background: url('./TVK-265.jpg') no-repeat center 45%/cover;
+    background: url('/TVK-265.jpg') no-repeat center 45%/cover;
     color: #fff;
     position: relative;
     display: flex;
