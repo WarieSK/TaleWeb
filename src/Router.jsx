@@ -12,7 +12,7 @@ const WebRouter = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<App />} />
-          <Route path="/Main" element={<App />} />
+          <Route path="/WebRozpravky" element={<App />} />
           <Route path="/Members" element={<MembersPage />} />
           <Route path="/Members/:id" element={<MemberDetail />} />
           <Route path="/Shows" element={<ShowsPage />} />
