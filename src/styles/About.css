@@ -69,7 +69,7 @@
 }
 
 /* Responzívne nastavenie */
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .about {
     display: flex;
     align-items: center;
