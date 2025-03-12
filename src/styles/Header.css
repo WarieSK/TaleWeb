@@ -79,6 +79,7 @@
   align-items: center;
   padding-top: 0;
   visibility: hidden; /* Sidebar je neviditeľný, kým sa neaktivuje */
+  overflow-y: auto;
 }
 
 /* Keď je sidebar otvorený */
@@ -103,30 +104,8 @@
   color: white;
 }
 
-/* Responzivita pre menšie obrazovky */
-@media (max-width: 1024px) {
-  .header {
-    padding: 10px 15px;
-  }
 
-  .logo {
-    font-size: 1.6rem;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-  }
-
-  .menu-icon {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .header {
     padding: 2%;
   }
