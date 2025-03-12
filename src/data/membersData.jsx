@@ -1,5 +1,19 @@
 const membersData = [
     {
+      id: 1000,
+      name: "Sofia Filičková",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "...",
+    },
+    {
+      id: 1001,
+      name: "Lucia Tomková",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+    {
       id: 1,
       name: "Peter Karpinský",
       role: "Scénarista a Režisér",
@@ -194,6 +208,55 @@ const membersData = [
       role: "Herec",
       image: "/JA.jpg",
       bio: "Zodpovedný za hudobný sprievod a atmosféru predstavení."
+    },
+    {
+      id: 29,
+      name: "Eva Kollárova",
+      role: "Textár",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+    {
+      id: 30,
+      name: "Miroslav Kollár",
+      role: "Technická asistencia",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+    {
+      id: 31,
+      name: "Marián Čižinský",
+      role: "Technická asistencia",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+    {
+      id: 32,
+      name: "Gabriel Poľanský",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+    {
+      id: 33,
+      name: "Mária Barnovská",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+    {
+      id: 34,
+      name: "Ema Jeleňová",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+    {
+      id: 35,
+      name: "Jana Filičková",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "..."
     },
   ];
   
