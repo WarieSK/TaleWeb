@@ -57,7 +57,7 @@ const CurrentShow = () => {
                     <p>
                     Profesor Physicus vynájde mechanického človeka, ktorému dá meno Železník. Železník je silný, vytrvalý a šikovný a pán veľkopodnikateľ, ktorý si robota objednal, ho chce využiť na prácu v továrni, aby mohol prepustiť ostatných zamestnancov. Železníkovi sa však táto úloha nepáči, pretože by sa chcel stať človekom, na to však potrebuje srdce. Počas plesu, ktorý usporiada veľkopodnikateľ na oslavu zásnub svojej dcéry Flóry, sa nechá oklamať zlodejskou bandou, ktorá mu prisľúbi zlaté srdce a začne s nimi lúpiť. Jeho púť za srdcom sa však u zlodejov nekončí. Po tom, ako oslobodí unesenú Flóru, dostane sa do galérie, kde stretá Monu Lisu, Nefertiti, Fridu Kalo, Venušu a Apolóna i ďalšie umelecké diela. Ani tam však srdce nenájde. Až láska mu dá to, čo hľadá.
                     </p>
-                    {!isExpanded && isMobile && <div className="description-gradient"></div>}
+                    
                   </div>
                   {isMobile && (
                     <button className="show-more-button" onClick={toggleDescription}>

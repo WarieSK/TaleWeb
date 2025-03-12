@@ -146,7 +146,12 @@
   
   .current-show-description {
     max-height: 80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Počet riadkov, po ktorých sa zobrazia tri bodky */
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Ak chceš, aby sa text zalamoval */
   }
 
   .description-gradient {
