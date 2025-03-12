@@ -48,7 +48,7 @@
 }
 
 .show-title {
-  font-size: 2rem;
+  font-size: larger;
   margin-bottom: 15px;
   color: #007BFF;
   font-weight: bold;
@@ -62,9 +62,9 @@
 
 .current-show-info th,
 .current-show-info td {
+  font-size: larger;
   text-align: left;
   padding: 12px;
-  border-top: 1px solid #ddd;
   word-wrap: nowrap;
 }
 
@@ -77,8 +77,21 @@
 }
 
 .current-show-description {
-  position: relative;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   overflow: visible;
+  text-overflow: ellipsis;
+  white-space: normal;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.current-show-description.collapsed {
+  -webkit-line-clamp: 5;
+  max-height: 20vh;
+}
+
+.current-show-description.expanded {
+  -webkit-line-clamp: unset; /* Zobrazí celý text */
   max-height: none;
 }
 
@@ -118,6 +131,12 @@
     max-width: 600px;
   }
 
+  .current-show-info h2 {
+    font-size: xx-large;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
   .current-show-info table {
     width: 100%;
     display: table;
@@ -135,6 +154,7 @@
 
   .current-show-info th,
   .current-show-info td {
+    font-size: medium;
     display: table-cell;
     padding: 12px;
     width: 70%;
@@ -146,12 +166,16 @@
   
   .current-show-description {
     max-height: 80px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /* Počet riadkov, po ktorých sa zobrazia tri bodky */
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal; /* Ak chceš, aby sa text zalamoval */
+  }
+
+  .current-show-description::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding-left: 10px;
   }
 
   .description-gradient {
