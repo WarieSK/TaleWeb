@@ -1,13 +1,13 @@
 .hero {
     width: 100vw;
     height: 100vh; /* Celá výška okna prehliadača */
-    background: url('/TVK-265.jpg') no-repeat center 45%/cover;
+    background: url('/TVK-265.jpg') no-repeat center 10%/cover;
     color: #fff;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4.5%; /* Upravte podľa výšky fix headeru */
+    margin-top: 0; /* Upravte podľa výšky fix headeru */
   }
   
   .hero::before {
@@ -62,7 +62,7 @@
     box-shadow: 0px 6px 14px rgba(0, 123, 255, 0.6);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
     .hero {
       height: 100vh;
       margin-top: 0px;

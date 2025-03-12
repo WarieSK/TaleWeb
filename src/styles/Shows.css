@@ -154,6 +154,10 @@
     max-height: none; /* Odstránenie výškového limitu */
   }
 
+  .showMain-card {
+    max-width: 100%;
+  }
+
   .showMain-card img {
     max-width: 100%;
   }
@@ -168,5 +172,9 @@
     grid-template-columns: 1fr;
     overflow: visible;
     max-height: none; /* Odstránenie výškového limitu */
+  }
+
+  .showMain-card img {
+    max-width: 75%;
   }
 }
