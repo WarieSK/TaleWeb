@@ -50,6 +50,7 @@
   justify-content: space-between;
   height: 100%;
   position: relative;
+  min-width: 300px;
 }
 
 .showMain-card:hover {
@@ -128,7 +129,7 @@
 }
 
 /* Responzívne nastavenia */
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .showsMain {
     padding: 5%;
   }
@@ -159,5 +160,13 @@
 
   .showMain-more-button {
     width: 90%;
+  }
+}
+
+@media (max-width: 1240px) {
+  .showsMain-grid {
+    grid-template-columns: 1fr;
+    overflow: visible;
+    max-height: none; /* Odstránenie výškového limitu */
   }
 }
