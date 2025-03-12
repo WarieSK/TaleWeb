@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "../styles/CurrentShow.css";
 
 const CurrentShow = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 920); // Zvýšená hranica na 920px
+  const descriptionRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 920); // Nastavenie hranice na 920px
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -15,14 +16,20 @@ const CurrentShow = () => {
 
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
+
+    if (!isExpanded && descriptionRef.current) {
+      setTimeout(() => {
+        descriptionRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 100);
+    }
   };
 
   return (
     <section id="current-show" className="current-show">
       <div className="current-show-container">
-        <div className="current-show-poster">
-          <img src="Z-plagat.jpg" alt="Plagát predstavenia" className="responsive-poster" />
-        </div>
         <div className="current-show-info">
           <h2>Aktuálne pripravujeme:</h2>
           <table>
@@ -47,6 +54,7 @@ const CurrentShow = () => {
                 <th>Opis:</th>
                 <td>
                   <div 
+                    ref={descriptionRef}
                     className={`current-show-description ${isExpanded ? 'expanded' : 'collapsed'}`} 
                   >
                     <p>
@@ -61,6 +69,7 @@ const CurrentShow = () => {
                       Ani tam však srdce nenájde. Až láska mu dá to, čo hľadá.
                     </p>
                   </div>
+                  {/* Zmena na 920px */}
                   {isMobile && (
                     <button className="show-more-button" onClick={toggleDescription}>
                       {isExpanded ? 'Zobraziť menej' : 'Zobraziť viac'}
@@ -70,6 +79,9 @@ const CurrentShow = () => {
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className="current-show-poster">
+          <img src="Z-plagat.jpg" alt="Plagát predstavenia" className="responsive-poster" />
         </div>
       </div>
     </section>

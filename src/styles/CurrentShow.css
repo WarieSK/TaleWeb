@@ -19,6 +19,7 @@
 }
 
 .current-show-poster {
+  order: -1;
   flex: 1 1 auto;
   max-width: 400px;
 }
@@ -33,6 +34,7 @@
 }
 
 .current-show-info {
+  order: 1;
   flex: 2 1 auto;
   max-width: 50%;
   display: flex;
@@ -119,6 +121,117 @@
   }
 
   .responsive-poster {
+    order: 1;
+    max-height: 600px;
+    width: auto;
+    border: 2px solid #333;
+  }
+
+  .current-show-info {
+    order: -1;
+    text-align: left;
+    width: 100%;
+    display: block;
+    max-width: 800px;
+  }
+
+  .current-show-info h2 {
+    font-size: 3rem;
+    margin-left: 3%;
+    color: #333;
+  }
+
+  .current-show-info table {
+    width: 100%;
+    display: table;
+  }
+
+  .current-show-info tbody {
+    width: 100%;
+    display: table-row-group;
+  }
+
+  .current-show-info tr {
+    display: table-row;
+    width: 100%;
+  }
+
+  .current-show-info th,
+  .current-show-info td {
+    font-size: 1.25rem;
+    display: table-cell;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .current-show-info th {
+    width: 10%;
+    padding: 12px;
+    
+  }
+
+  .current-show-info td {
+    width: 50%;
+    padding: 12px;
+  }
+  
+  .current-show-description {
+    max-height: 80px;
+    overflow: hidden;
+  }
+
+  .current-show-description::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding-left: 10px;
+  }
+
+  .description-gradient {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  }
+
+  .show-more-button {
+    display: block;
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 3%;
+    margin-left: 0%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .current-show {
+    background-color: #fff;
+  }
+
+  .current-show-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .current-show-poster {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .responsive-poster {
     max-height: 400px;
     width: auto;
     border: 2px solid #333;
@@ -128,7 +241,7 @@
     text-align: left;
     width: 100%;
     display: block;
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .current-show-info h2 {
@@ -196,7 +309,7 @@
     padding: 10px 15px;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
+    margin-top: 4%;
+    border-radius: 10px;
   }
 }
