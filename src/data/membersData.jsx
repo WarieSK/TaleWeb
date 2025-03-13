@@ -13,6 +13,24 @@ const membersData = [
       image: "/JA.jpg",
       bio: "..."
     },
+
+    {
+      id: 1000,
+      name: "Sofia Filičková",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "...",
+    },
+    {
+      id: 1001,
+      name: "Lucia Tomková",
+      role: "Herec",
+      image: "/JA.jpg",
+      bio: "..."
+    },
+
+
+
     {
       id: 1,
       name: "Peter Karpinský",
