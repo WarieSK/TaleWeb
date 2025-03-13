@@ -15,18 +15,11 @@ const membersData = [
     },
 
     {
-      id: 1000,
-      name: "Sofia Filičková",
-      role: "Herec",
-      image: "/JA.jpg",
+      id: -1,
+      name: "invisible",
+      role: "placeholder",
+      image: "none",
       bio: "...",
-    },
-    {
-      id: 1001,
-      name: "Lucia Tomková",
-      role: "Herec",
-      image: "/JA.jpg",
-      bio: "..."
     },
 
 

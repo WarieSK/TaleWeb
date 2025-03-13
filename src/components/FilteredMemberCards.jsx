@@ -12,6 +12,7 @@ const FilteredMemberCards = () => {
 
   // Filtrácia členov s id >= 1000
   const filteredMembers = membersData.filter(member => member.id >= 1000);
+  const invisibleCard = membersData.filter(member => member.id > 0);
 
   return (
     <div className="filteredMembers-container">

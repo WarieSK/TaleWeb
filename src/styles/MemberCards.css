@@ -28,7 +28,6 @@
   gap: 20px;
   padding: 20px;
   background: linear-gradient(to right, #f6cfbe, #b9dcf2);
-  min-height: 100%;
 }
 
 /* Karta člena */
@@ -41,6 +40,8 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  max-height: auto;
+  width: minmax(10vw, 15vw);
 }
 
 .memberCards-card:hover {
