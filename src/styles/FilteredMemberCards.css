@@ -1,48 +1,58 @@
-/* Štýl pre FilteredMemberCards */
+/* Štýl pre FilteredMemberCards inšpirovaný ShowCards.css */
 .filteredMembers-container {
   text-align: center;
   align-items: center;
   padding: 40px 20px;
-  background: linear-gradient(to right, #2c2c2c, #4f4f4f);
-  min-height: 100vh;
+  background: linear-gradient(to right, #141414, #023458);
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100vw; /* Zabezpečenie plnej šírky */
+  width: 100vw;
+  min-height: 50vh;
+
+
+
+  margin-top: 4.55%;
 }
 
 .filteredMembers-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #222;
   margin-bottom: 20px;
 }
 
-.filteredMembers-grid {
-  width: 90%;
-  max-height: auto;
-  display: grid; /* Zmena na flex pre zarovnanie vedľa seba */
-  grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+.filteredMembers-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) repeat(3, 1fr); /* Prvé 2 na kartičky, posledné 3 na text */
   gap: 20px;
   padding: 20px;
-  background: linear-gradient(to right, #948984, #b9dcf2);
-  overflow: hidden;
-
-  justify-content: center;
-  align-items: center;
+  width: 90%;
+  height: auto;
+  align-items: stretch; /* Zabezpečí rovnakú výšku */
 }
 
+/* Grid pre kartičky */
+.filteredMembers-grid {
+  grid-column: span 2; /* Kartičky v prvých 2 stĺpcoch */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Kartičky - použitie štýlu z poskytnutého kódu */
 .filteredMember-card {
   display: flex;
   flex-direction: column;
-  background: #3a3a3a;
+  background: #f9f9f9;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  max-height: auto;
-  width: minmax(10vw, 15vw);
+  width: 100%; /* Kartičky budú mať rovnakú šírku */
+  height: auto;
 }
 
 .filteredMember-card:hover {
@@ -51,13 +61,13 @@
 }
 
 .filteredMember-image {
-  max-width: 100%;
-  height: auto; /* Fixná výška pre konzistentnosť */
-  border-bottom: 2px solid #222;
-  object-fit: fit;
-  filter: grayscale(100%); /* Čiernobiely efekt */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
 }
 
+/* Informácie o členovi */
 .filteredMember-info {
   padding: 15px;
   text-align: center;
@@ -65,36 +75,34 @@
 
 .filteredMember-info h3 {
   font-size: 1.3rem;
-  color: #ccc;
   margin-bottom: 5px;
+  color: #333;
 }
 
 .filteredMember-info p {
   font-size: 1rem;
-  color: #aaa;
+  color: #555;
   margin-bottom: 10px;
 }
 
-/* Efekt "in memoriam" */
-.filteredMember-card::after {
-  content: "†";
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 1.5rem;
-  color: #ff5555;
+/* Textová časť - bude zaberať 3 stĺpce */
+.filteredMembers-text {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  height: inherit;
 }
 
-/* Nápis "In Memoriam" nad gridom */
-.filteredMembers-label {
-  position: relative;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #ff5555;
-  padding: 8px 16px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
-  letter-spacing: 1px;
+.filteredMembers-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
 }

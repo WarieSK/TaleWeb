@@ -10,36 +10,43 @@ const FilteredMemberCards = () => {
     navigate(`/members/${id}`);
   };
 
-  // Filtrácia členov s id >= 1000
   const filteredMembers = membersData.filter(member => member.id >= 1000);
-  const invisibleCard = membersData.filter(member => member.id > 0);
 
   return (
     <div className="filteredMembers-container">
-  <div className="filteredMembers-label">In Memoriam</div>
-  <h2 className="filteredMembers-title">Členovia in memoriam</h2>
-  <div className="filteredMembers-grid">
-    {filteredMembers.map((member) => (
-      <div
-        key={member.id}
-        className="filteredMember-card"
-        onClick={() => handleCardClick(member.id)}
-        style={{ cursor: "pointer" }}
-      >
-        <img
-          src={member.image}
-          alt={member.name}
-          className="filteredMember-image"
-        />
-        <div className="filteredMember-info">
-          <h3>{member.name}</h3>
-          <p>{member.role}</p>
+      <div className="filteredMembers-content">
+        {/* Grid pre kartičky */}
+        <div className="filteredMembers-grid">
+          {filteredMembers.slice(0, 4).map((member) => (
+            <div
+              key={member.id}
+              className="filteredMember-card"
+              onClick={() => handleCardClick(member.id)}
+            >
+              <img
+                src={member.image}
+                alt={member.name}
+                className="filteredMember-image"
+              />
+              <div className="filteredMember-info">
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Textová časť */}
+        <div className="filteredMembers-text">
+          <h2>In Memoriam</h2>
+          <p>
+            Táto sekcia je venovaná členom, ktorí už nie sú medzi nami. Ich prínos
+            a odkaz ostávajú v našich srdciach a na javisku. Spomíname na nich s
+            láskou a úctou.
+          </p>
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
+    </div>
   );
 };
 

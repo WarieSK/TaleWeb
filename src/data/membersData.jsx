@@ -14,16 +14,8 @@ const membersData = [
       bio: "..."
     },
 
-    {
-      id: -1,
-      name: "invisible",
-      role: "placeholder",
-      image: "none",
-      bio: "...",
-    },
 
-
-
+    
     {
       id: 1,
       name: "Peter Karpinský",
