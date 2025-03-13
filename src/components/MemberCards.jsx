@@ -5,6 +5,7 @@ import membersData from "../data/membersData";
 
 const MemberCards = () => {
   const navigate = useNavigate();
+  const Members = membersData.filter(member => member.id < 1000);
 
   const handleCardClick = (id) => {
     navigate(`/members/${id}`);
@@ -14,7 +15,7 @@ const MemberCards = () => {
     <div className="membersCards-container">
       <h2 className="membersCards-title">Naši členovia</h2>
       <div className="membersCards-grid">
-        {membersData.map((member) => (
+        {Members.map((member) => (
           <div key={member.id} className="memberCards-card" onClick={() => handleCardClick(member.id)} style={{ cursor: "pointer" }}>
             <img src={member.image} alt={member.name} className="memberCards-image" />
             <div className="memberCards-info">
