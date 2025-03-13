@@ -82,7 +82,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: visible;
-  text-overflow: ellipsis;
+  text-overflow: hidden;
   white-space: normal;
   transition: max-height 0.3s ease-in-out;
 }
@@ -180,15 +180,6 @@
     overflow: hidden;
   }
 
-  .current-show-description::after {
-    content: "...";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: white;
-    padding-left: 10px;
-  }
-
   .description-gradient {
     display: block;
     position: absolute;
@@ -280,15 +271,6 @@
   .current-show-description {
     max-height: 80px;
     overflow: hidden;
-  }
-
-  .current-show-description::after {
-    content: "...";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: white;
-    padding-left: 10px;
   }
 
   .description-gradient {
