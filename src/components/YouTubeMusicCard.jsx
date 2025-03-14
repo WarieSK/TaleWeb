@@ -37,23 +37,15 @@ export default function YouTubeMusicCard({ songs }) {
   };
 
   const handleNextSong = () => {
-    if (currentSongIndex < songs.length - 1) {
-      setCurrentSongIndex(currentSongIndex + 1);
-    } else {
-      setCurrentSongIndex(0); // Začiatok zoznamu
-    }
-    setIsPlaying(false);
-    setProgress(0);
+    setCurrentSongIndex((prevIndex) =>
+      prevIndex < songs.length - 1 ? prevIndex + 1 : 0
+    );
   };
 
   const handlePreviousSong = () => {
-    if (currentSongIndex > 0) {
-      setCurrentSongIndex(currentSongIndex - 1);
-    } else {
-      setCurrentSongIndex(songs.length - 1); // Prejdi na poslednú skladbu
-    }
-    setIsPlaying(false);
-    setProgress(0);
+    setCurrentSongIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : songs.length - 1
+    );
   };
 
   const handleProgressClick = (e) => {
@@ -98,11 +90,22 @@ export default function YouTubeMusicCard({ songs }) {
     }
   }, [player]);
 
+  // ✅ Zmena: Keď sa zmení `currentSongIndex`, inicializuj nový prehrávač
+  useEffect(() => {
+    if (player) {
+      player.stopVideo(); // Zničí aktuálny prehrávač
+      player.cueVideoById(songs[currentSongIndex].youtubeId);
+      player.playVideo(); // Automaticky spustí prehrávanie
+      setIsPlaying(true);
+      setProgress(0);
+    }
+  }, [currentSongIndex]);
+
   const opts = {
     height: "0",
     width: "0",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1, // ✅ Nastavené na automatické spustenie
       controls: 0
     }
   };
@@ -143,7 +146,7 @@ export default function YouTubeMusicCard({ songs }) {
           {currentTime} / {duration}
         </div>
 
-        {/* YouTube Player */}
+        {/* ✅ Zmena: Vždy inicializuj nový prehrávač */}
         <YouTube
           videoId={currentSong.youtubeId}
           opts={opts}
@@ -151,7 +154,7 @@ export default function YouTubeMusicCard({ songs }) {
           onEnd={handleNextSong}
         />
 
-        {/* Song List */}
+        {/* ✅ Zmena: Automatické spustenie po kliknutí */}
         <ul className="song-list">
           {songs.map((song, index) => (
             <li
